@@ -1,0 +1,84 @@
+% !TEX program = xelatex
+% !TEX encoding = UTF-8
+% !BIB program = biber
+\documentclass[12pt,a4paper]{article}
+
+% When using `xelatex' one always get utf-8 input encoding
+% (not `T1' encoding with `inputenc' package).
+% `xelatex' use `fontspec' package instead `fontenc'.
+\usepackage{fontspec}
+% `xeCJK' provide CJK font related macros.
+% One set CJK font by `\setCJKmainfont' macro.
+% Since 楷體 does not come with bold typeface, one can only use poor man bold
+% (fake bold typeface by superposition same character).
+% This is achieve with `BoldFont' argument in `xeCJK'.
+\usepackage[BoldFont]{xeCJK}
+\setCJKmainfont{TW-Kai}                % 中文字型使用標楷體
+\setmainfont{Courier New}              % 英文字型 (依國科會各司要求而定)
+\XeTeXlinebreaklocale "zh"             % 這兩行一定要加，中文才能自動換行
+\XeTeXlinebreakskip = 0pt plus 1pt     % 這兩行一定要加，中文才能自動換行
+
+% 設定紙張格式
+% 可參考 https://www.overleaf.com/learn/latex/Page_size_and_margins
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ left=12.7mm,       %左邊界
+ right=12.7mm,      %右邊界
+ top=12.7mm,        %上邊界
+ bottom=12.7mm,     %下邊界
+ }
+% Including `amsfonts'.  Must be loaded before `mathtools'.
+\usepackage{amssymb}
+% Including `amsmath' and fixing bugs for `amsmath'.
+\usepackage{mathtools}
+% Automatically adjust character spacing at margins.
+\usepackage{microtype}
+% Provide further utilities and fix bugs for `enumerate', `itemize' and
+% `description'.
+\usepackage{enumitem}
+% Provide better quoting environment.
+\usepackage{dirtytalk}
+
+% Utility for captions.
+\usepackage[figurename=圖]{caption}
+% Utility for captions and subcaptions.
+\usepackage{subcaption}
+% Utility for table header.
+\usepackage{fancyhdr}
+% Utility for graph input.
+\usepackage{graphicx}
+
+% Automatically add hyperlinks to labels/refs.  Must be loaded after all
+% packages above and before `cleveref'.  Recommend to use with `natbib' when
+% you need bibtex.
+\usepackage{hyperref}
+
+\renewcommand{\tablename}{表} % 改變表的名稱
+\pagestyle{fancy}
+\fancyhead{} % 清除所有頁首設定
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\headwidth}{\textwidth}
+
+\lfoot{表 CM03}
+\rfoot{共~~\pageref{LastPage}~~頁~~第{~~\thepage~~}頁}
+
+\begin{document}
+
+
+
+\noindent{\bf \large  三、研究計畫內容（以中文或英文撰寫）：} 
+
+\begin{enumerate}
+\item[(一)] 研究計畫之背景。請詳述本研究計畫所要探討或解決的問題、研究原創性、重要性、預期影響性及國內外有關本計畫之研究情況、重要參考文獻之評述等。如為連續性計畫應說明上年度研究進度。
+\item[(二)] 	研究方法、進行步驟及執行進度。請分年列述：1. 本計畫採用之研究方法與原因及其創新性。2. 預計可能遭遇之困難及解決途徑。3. 重要儀器之配合使用情形。4. 如為須赴國外或大陸地區研究，請詳述其必要性以及預期效益等。
+\item[(三)] 預期完成之工作項目及成果。請分年列述：1. 預期完成之工作項目。2. 對於參與之工作人員，預期可獲之訓練。3. 預期完成之研究成果（如實務應用績效、期刊論文、研討會論文、專書、技術報告、專利或技術移轉等質與量之預期成果）。4. 學術研究、國家發展及其他應用方面預期之貢獻。
+\item[(四)] 整合型研究計畫說明。如為整合型研究計畫請就以上各點分別說明與其他子計畫之相關性。
+\end{enumerate}	
+
+
+
+\label{LastPage}
+\end{document}
